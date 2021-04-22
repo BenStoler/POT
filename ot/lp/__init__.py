@@ -409,14 +409,15 @@ def emd2(a, b, M, processes=multiprocessing.cpu_count(),
             return [cost, log]
     else:
         def f(b):
-            bsel = b != 0
-            G, cost, u, v, result_code = emd_c(a, b, M, numItermax)
+            # TODO: just uses cost and result_code
+            #bsel = b != 0
+            _, cost, _, _, result_code = emd_c(a, b, M, numItermax)
 
-            if center_dual:
-                u, v = center_ot_dual(u, v, a, b)
+            #if center_dual:
+                #u, v = center_ot_dual(u, v, a, b)
 
-            if np.any(~asel) or np.any(~bsel):
-                u, v = estimate_dual_null_weights(u, v, a, b, M)
+            #if np.any(~asel) or np.any(~bsel):
+                #u, v = estimate_dual_null_weights(u, v, a, b, M)
 
             check_result(result_code)
             return cost
