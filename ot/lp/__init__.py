@@ -17,13 +17,12 @@ from scipy.sparse import coo_matrix
 from . import cvx
 from .cvx import barycenter
 # import compiled emd
-from .emd_wrap import emd_c, check_result, emd_1d_sorted
+from .emd_wrap import emd_c, check_result, emd_1d_sorted, emd_c2
 from ..utils import dist
 from ..utils import parmap
 
 __all__ = ['emd', 'emd2', 'barycenter', 'free_support_barycenter', 'cvx',
            'emd_1d', 'emd2_1d', 'wasserstein_1d']
-
 
 def center_ot_dual(alpha0, beta0, a=None, b=None):
     r"""Center dual OT potentials w.r.t. theirs weights

@@ -31,6 +31,7 @@ enum ProblemType {
 };
 
 int EMD_wrap(int n1,int n2, double *X, double *Y,double *D, double *G, double* alpha, double* beta, double *cost, int maxIter);
+int EMD_wrap2(int n1,int n2, double *X, double *Y,double *D, double *G, double* alpha, double* beta, double *cost, int maxIter);
 
 
 
